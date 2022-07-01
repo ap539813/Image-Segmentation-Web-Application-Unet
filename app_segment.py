@@ -5,7 +5,7 @@ import seaborn as sns
 # importing the local modules
 from important_variables import input_shape, data_url, css_file_path, theme_image_name
 # from prediction import prediction_individual_plant, prediction_general
-from homepage import main, homepage
+from application_pages import main, homepage
 from add_style import local_css
 import tensorflow as tf
 
