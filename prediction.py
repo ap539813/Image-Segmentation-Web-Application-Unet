@@ -24,7 +24,10 @@ def segment_image(model_path):
         image = np.expand_dims(image, 0)/255
 
         
-        pred = model.predict(image)[0,:,:]
+        pred = np.argmax(model.predict(image), axis=3)[0,:,:]
+        
+
+        print(pred.shape)
 
         output_col.image(pred, caption='Segmented Image.', use_column_width=True)
 
