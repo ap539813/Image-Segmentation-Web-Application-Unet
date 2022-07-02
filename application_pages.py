@@ -1,5 +1,5 @@
 import streamlit as st
-from important_variables import theme_image_name, model_path
+from important_variables import theme_image_name, model_path_unet, model_path_encoder_decoder
 from prediction import segment_image
 
 def main():
@@ -8,12 +8,17 @@ def main():
 
     st.sidebar.title("Control Panel")
 
-    type_plant = st.sidebar.radio("Select Type of Model: ", ('Unet Model', 'Simple Encoder Decoder'))
+    type_model = st.sidebar.radio("Select Type of Model: ", ('Unet Model', 'Simple Encoder Decoder'))
 
-    if type_plant == 'Unet Model':
-        st.title(f"Segmentation using {type_plant}")
+    if type_model == 'Unet Model':
+        st.title(f"Segmentation using {type_model}")
 
-        segment_image(model_path)
+        segment_image(model_path_unet)
+
+    elif type_model == 'Simple Encoder Decoder':
+        st.title(f"Segmentation using {type_model}")
+
+        segment_image(model_path_encoder_decoder)
 
     
 
