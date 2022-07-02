@@ -25,5 +25,6 @@ file_.close()
 
 css_file_path = 'style/style.css'
 
-model_path = 'Unet_model.hdf5'
+model_path_unet = 'Unet_model.hdf5'
+model_path_encoder_decoder = 'Simple_Encode_Decoder.hdf5'
 
